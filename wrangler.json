@@ -1,7 +1,16 @@
 {
   "name": "kon-site",
   "compatibility_date": "2025-10-08",
-  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "pages_build_output_dir": "dist",
+  "r2_buckets": [
+    {
+      "binding": "R2_BUCKET",
+      "bucket_name": "kon-site"
+    }
+  ],
   "main": "./dist/_worker.js/index.js",
   "assets": {
     "directory": "./dist",

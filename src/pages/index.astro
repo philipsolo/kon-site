@@ -1,50 +1,150 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<BaseLayout>
+  <section class="home">
+    <div class="content">
+      <!-- Intro paragraph provided by user -->
+      <p>
+        <strong>KS:</strong> I met Konstantinos through some prompts, and we agreed — well, I had little choice — to take a moment to reflect on him and what matters to him. Born in Athens in 1999, he has a love–hate relationship with the city — a place that fosters subversion, feels liminal at times, but is undeniably beautiful.
+      </p>
+
+      <p>
+        <strong>KS:</strong> He moves through different circles of friends: people to talk work with, people to talk feelings with, and people to simply go out and dance with. Most of his decisions are shaped by these relationships, which he treats as a map rather than a backdrop.
+      </p>
+
+      <p>
+        <strong>KS:</strong> Weekdays are spent working in cafes or libraries, often followed by trips to the cinema, leading into Sundays spent relaxing at the sea.
+      </p>
+
+      <figure class="figure">
+        <img src="/blog-placeholder-1.jpg" alt="IMG_0187 placeholder" />
+        <figcaption class="sr-only">IMG_0187</figcaption>
+      </figure>
+
+      <!-- Raw conversational headings/markers preserved so you can replace later -->
+      <p><strong>GPT</strong></p>
+      <p><strong>KS</strong></p>
+
+      <!-- Existing Q/A block retained and expanded with user content -->
+      <div class="qna">
+        <div class="gpt"><p><strong>GPT:</strong> Do you remember a moment when you knew this is what you wanted to do?</p></div>
+        <div class="ks"><p><strong>KS:</strong> It was more like a method of elimination, as I didn’t really think it was possible to do something more creative. In my environment, it was frowned upon not to become an engineer or lawyer. But after doing Mathematics, I realized I could never live a corporate or scientific life. I have a vivid memory of being on Hydra one summer for a party, and it just clicked — fashion had to be more than a hobby.</p></div>
+      </div>
+
+      <p><strong>GPT:</strong> That sounds like a turning point — not loud or dramatic, but a kind of quiet click in your head. What was it about that moment in Hydra that made it feel different from everything before?</p>
+
+      <p><strong>KS:</strong> I think I was just more confident in that setting. It’s a small and beautiful place. Like most Greek islands, it has its own aesthetic and vibe, and while I was interpreting it, I realized this is what I want to do — interpret and reproduce unique aesthetics.</p>
+
+      <p><strong>KS:</strong> “I don’t force direction. I let things unfold.”</p>
+
+      <p><strong>GPT:</strong> So it wasn’t just about clothes or visuals, but more about translating a feeling — turning a place, a mood, or a moment into something tangible. Do you think that’s still what drives you now?</p>
+
+      <p><strong>KS:</strong> Yes, exactly. At the moment, I’m more focused on spaces and how to extract the appropriate emotions from them.</p>
+
+      <p><strong>GPT:</strong> When you’re in a space, what’s the first thing you pay attention to?</p>
+      <p><strong>KS:</strong> What doesn’t fit or isn’t needed.</p>
+
+      <p><strong>GPT:</strong> Do you approach people and relationships the same way?</p>
+      <p><strong>KS:</strong> I usually expect the most from people even if they let me down. It often leads to disappointment, but I still prefer this approach to a safer one. Risky relationships usually give you more.</p>
+
+      <p><strong>GPT:</strong> Do you think your sensitivity and awareness of people helps in reading spaces and projects the same way?</p>
+      <p><strong>KS:</strong> Probably, since most things I do are collaborative, and without trust and freedom, people can’t create.</p>
+
+      <p><strong>GPT:</strong> How do you usually create that environment when you’re leading a project?</p>
+      <p><strong>KS:</strong> I mostly try to work with friends, so the trust is already there. Many times, I have to find “strangers,” in which case I like approaching them as potential new friends.</p>
+
+      <p><strong>GPT:</strong> “I find high-intensity environments to be the only places where I feel fully engaged.”</p>
+      <p><strong>KS:</strong> I’m fascinated by the challenge of remaining calm in chaotic situations and supporting others in doing the same.</p>
+
+      <p><strong>GPT:</strong> Do you ever feel a conflict between the emotional side of how you see things and the more practical side of getting them done?</p>
+      <p><strong>KS:</strong> Emotion is definitely needed to be creative, but it can never interfere with actual work output. These work environments are already stressful enough; being unstable is way too unproductive.</p>
+
+      <p><strong>KS:</strong> I usually ride that high for the entirety of the project and wind down after it’s all done. I find that high-intensity work environments like these are among the few places where I feel fully engaged and inspired.</p>
+
+      <p><strong>GPT:</strong> What do you think it gives you that calmer environments don’t?</p>
+      <p><strong>KS:</strong> I’m fascinated by the challenge of remaining calm in chaotic situations and supporting others in doing the same. So it’s almost like you become the grounding force when everything around you is moving fast.</p>
+
+      <p><strong>KS:</strong> Being the middle child with two brothers, I constantly had to be the middleman and resolve most issues — even with my parents.</p>
+
+      <p><strong>KS:</strong> It seems like all of this — the people, the spaces, the moments — isn’t just what you do, but also how you make sense of the world.</p>
+
+      <figure class="figure">
+        <img src="/blog-placeholder-2.jpg" alt="IMG_0339 placeholder" />
+        <figcaption class="sr-only">IMG_0339</figcaption>
+      </figure>
+
+      <blockquote class="closing-quote">
+        “Human connections are how I navigate, not what I decorate my life with.”
+      </blockquote>
+
+      <figure class="figure last">
+        <img src="/blog-placeholder-3.jpg" alt="IMG_0087 placeholder" />
+        <figcaption class="sr-only">IMG_0087</figcaption>
+      </figure>
+
+      <p class="issue">
+        <strong>14 STOUT MEN, APARTAMENTO ISSUE #35</strong>
+      </p>
+
+      <p><strong>A Screenplay by EFTHIMIS FILIPPOU</strong></p>
+
+      <p><strong>EFTHIMIS:</strong> “I should probably also note here that my main worry, over and above the style or tone I do or do not have, is convincing myself that what I do is a proper job.”</p>
+
+      <figure class="figure">
+        <img src="/blog-placeholder-4.jpg" alt="IMG_6746 placeholder" />
+        <figcaption class="sr-only">IMG_6746</figcaption>
+      </figure>
+
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Page-specific layout placed inside the layout's main element */
+  .home {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 4rem 1.25rem;
+  }
+
+  .hero {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .promo { text-align: center; margin-bottom: 1rem; color: rgba(255,255,255,0.95); }
+  .promo .cta { margin-left: .5rem; color: rgba(255,255,255,0.95); text-decoration: underline; }
+
+  .mini-nav { display: flex; justify-content: center; gap: 1.25rem; margin-bottom: 1.5rem; }
+  .mini-nav a { color: rgba(255,255,255,0.95); text-decoration: none; }
+
+  h1 { font-size: 2.25rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.125rem; color: rgba(255,255,255,0.9); }
+
+  hr { border: 0; height: 1px; background: rgba(255,255,255,0.08); margin: 2rem 0; }
+
+  .content p { margin-bottom: 1.5rem; line-height: 1.7; color: rgba(255,255,255,0.95); }
+
+  .qna { margin-bottom: 1.25rem; }
+  .gpt, .ks { padding: .85rem; border-radius: 6px; }
+  .gpt { background: rgba(255,255,255,0.04); }
+  .ks { background: rgba(255,255,255,0.02); margin-top: .5rem; }
+
+  .split { display: grid; grid-template-columns: 1fr 320px; gap: 1.25rem; align-items: center; margin: 2rem 0; }
+  .split.reverse { grid-template-columns: 320px 1fr; }
+
+  .figure { margin: 2rem 0; }
+  .figure img { width: 100%; height: auto; display: block; border-radius: 8px; }
+
+  .closing-quote { margin-top: 3rem; text-align: center; font-size: 1.35rem; font-style: italic; font-weight: 600; color: rgba(255,255,255,0.96); }
+
+  .issue { text-align: center; margin-top: 2rem; }
+
+  @media (max-width: 720px) {
+    .split { grid-template-columns: 1fr; }
+    .split.reverse { grid-template-columns: 1fr; }
+    .home { padding: 2rem 1rem; }
+  }
+</style>
