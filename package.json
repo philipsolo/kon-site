@@ -1,6 +1,6 @@
 {
   "name": "kon-site",
-  "description": "Build a personal website, blog, or portfolio with Astro.",
+  "description": "Konstantinos portfolio website",
   "private": true,
   "cloudflare": {
     "label": "Astro Framework Starter",

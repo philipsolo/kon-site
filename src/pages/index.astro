@@ -5,7 +5,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <BaseLayout>
   <section class="home">
     <div class="content">
-      <!-- Intro paragraph provided by user -->
       <p>
         <strong>KS:</strong> I met Konstantinos through some prompts, and we agreed — well, I had little choice — to take a moment to reflect on him and what matters to him. Born in Athens in 1999, he has a love–hate relationship with the city — a place that fosters subversion, feels liminal at times, but is undeniably beautiful.
       </p>
@@ -18,16 +17,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <strong>KS:</strong> Weekdays are spent working in cafes or libraries, often followed by trips to the cinema, leading into Sundays spent relaxing at the sea.
       </p>
 
+      <!-- Randomized image slot 1 -->
       <figure class="figure">
-        <img src="/blog-placeholder-1.jpg" alt="IMG_0187 placeholder" />
-        <figcaption class="sr-only">IMG_0187</figcaption>
+        <img data-random-slot="0" class="rand-img main-img" alt="random image slot 1" loading="lazy" decoding="async" width="650" />
+        <figcaption class="sr-only">random image</figcaption>
       </figure>
 
-      <!-- Raw conversational headings/markers preserved so you can replace later -->
+      <!-- Raw conversational headings/markers preserved -->
       <p><strong>GPT</strong></p>
       <p><strong>KS</strong></p>
 
-      <!-- Existing Q/A block retained and expanded with user content -->
+      <!-- Q/A block -->
       <div class="qna">
         <div class="gpt"><p><strong>GPT:</strong> Do you remember a moment when you knew this is what you wanted to do?</p></div>
         <div class="ks"><p><strong>KS:</strong> It was more like a method of elimination, as I didn’t really think it was possible to do something more creative. In my environment, it was frowned upon not to become an engineer or lawyer. But after doing Mathematics, I realized I could never live a corporate or scientific life. I have a vivid memory of being on Hydra one summer for a party, and it just clicked — fashion had to be more than a hobby.</p></div>
@@ -70,35 +70,109 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <p><strong>KS:</strong> It seems like all of this — the people, the spaces, the moments — isn’t just what you do, but also how you make sense of the world.</p>
 
+      <!-- Randomized image slot 2 -->
       <figure class="figure">
-        <img src="/blog-placeholder-2.jpg" alt="IMG_0339 placeholder" />
-        <figcaption class="sr-only">IMG_0339</figcaption>
+        <img data-random-slot="1" class="rand-img main-img" alt="random image slot 2" loading="lazy" decoding="async" width="650" />
+        <figcaption class="sr-only">random image</figcaption>
       </figure>
 
       <blockquote class="closing-quote">
         “Human connections are how I navigate, not what I decorate my life with.”
       </blockquote>
 
-      <figure class="figure last">
-        <img src="/blog-placeholder-3.jpg" alt="IMG_0087 placeholder" />
-        <figcaption class="sr-only">IMG_0087</figcaption>
-      </figure>
-
-      <p class="issue">
-        <strong>14 STOUT MEN, APARTAMENTO ISSUE #35</strong>
-      </p>
-
-      <p><strong>A Screenplay by EFTHIMIS FILIPPOU</strong></p>
-
-      <p><strong>EFTHIMIS:</strong> “I should probably also note here that my main worry, over and above the style or tone I do or do not have, is convincing myself that what I do is a proper job.”</p>
-
-      <figure class="figure">
-        <img src="/blog-placeholder-4.jpg" alt="IMG_6746 placeholder" />
-        <figcaption class="sr-only">IMG_6746</figcaption>
-      </figure>
+      <!-- Large gallery of all images -->
+      <section class="all-images">
+        <h3><strong>All images</strong></h3>
+        <div class="gallery" id="gallery"></div>
+      </section>
 
     </div>
   </section>
+
+  <script type="module">
+    // List of public images available in the repo's public/ directory.
+    // Edit this list if you add or remove files.
+    const IMAGES = [
+      '/blog-placeholder-1.jpg',
+      '/blog-placeholder-2.jpg',
+      '/blog-placeholder-3.jpg',
+      '/blog-placeholder-4.jpg',
+      '/blog-placeholder-5.jpg',
+      '/blog-placeholder-about.jpg',
+      '/dji_fly_20240616_191910_0005_1718599063526_photo.jpg',
+      '/DSC09423.JPG',
+      '/IMG_0341.JPG',
+      '/IMG_8492.JPG',
+      '/IMG_4405.JPG',
+      '/IMG_0187.HEIC',
+      '/IMG_0087.HEIC',
+      '/IMG_0339.HEIC',
+      '/IMG_2392.HEIC',
+      '/IMG_2410.HEIC',
+      '/IMG_2991.heic',
+      '/IMG_3140.HEIC',
+      '/IMG_4481.HEIC',
+      '/IMG_5413.HEIC',
+      '/IMG_5602.HEIC',
+      '/IMG_6373.HEIC',
+      '/IMG_6746.HEIC',
+      '/IMG_6813.HEIC',
+      '/IMG_6905.HEIC',
+      '/IMG_7149.HEIC',
+      '/IMG_7194.HEIC',
+      '/IMG_8301.HEIC',
+      '/IMG_8388.HEIC',
+      '/IMG_8389.HEIC',
+      '/IMG_8598.HEIC',
+      '/IMG_8881.HEIC',
+      '/IMG_9220.HEIC'
+    ];
+
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    // Pick random images for each placeholder slot and populate attributes for caching/efficiency
+    (function populateRandomSlots() {
+      const slots = document.querySelectorAll('[data-random-slot]');
+      if (!slots.length) return;
+      const shuffled = shuffle(IMAGES.slice());
+      slots.forEach((el, idx) => {
+        const img = shuffled[idx % shuffled.length];
+        // assign src and a basic srcset to allow browsers to pick appropriate size.
+        el.src = img;
+        // Use same image for srcset fallback; Cloudflare Pages will serve optimally from CDN.
+        el.srcset = `${img} 650w`;
+        el.sizes = '(min-width: 720px) 650px, 100vw';
+      });
+    })();
+
+    // Build a simple, cache-efficient gallery
+    (function buildGallery() {
+      const gallery = document.getElementById('gallery');
+      if (!gallery) return;
+      const list = IMAGES.slice();
+      // keep order stable but allow simple shuffle for visual variety
+      const recommended = shuffle(list).slice(0, 100);
+      recommended.forEach((path) => {
+        const img = document.createElement('img');
+        img.src = path;
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        img.width = 300;
+        img.alt = '';
+        img.className = 'gallery-item';
+        // hint to the browser that these are long-lived static assets
+        img.setAttribute('fetchpriority', 'low');
+        gallery.appendChild(img);
+      });
+    })();
+  </script>
+
 </BaseLayout>
 
 <style>
@@ -136,7 +210,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .split.reverse { grid-template-columns: 320px 1fr; }
 
   .figure { margin: 2rem 0; }
-  .figure img { width: 100%; height: auto; display: block; border-radius: 8px; }
+  .main-img { width: 100%; height: auto; border-radius: 8px; display: block; }
+
+  .all-images { margin-top: 3rem; }
+  .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.75rem; }
+  .gallery-item { width: 100%; height: auto; display: block; border-radius: 6px; object-fit: cover; }
 
   .closing-quote { margin-top: 3rem; text-align: center; font-size: 1.35rem; font-style: italic; font-weight: 600; color: rgba(255,255,255,0.96); }
 
