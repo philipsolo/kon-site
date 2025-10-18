@@ -5,10 +5,12 @@
     "nodejs_compat"
   ],
   "pages_build_output_dir": "dist",
-  "main": "./dist/_worker.js/index.js",
-  "assets": {
-    "directory": "./dist"
-  },
+  "r2_buckets": [
+    {
+      "binding": "R2_BUCKET",
+      "bucket_name": "kon-site"
+    }
+  ],
   "observability": {
     "enabled": true
   },
