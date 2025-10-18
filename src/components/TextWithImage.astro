@@ -9,7 +9,7 @@ const { imageSrc, imagePosition = 'left' } = Astro.props;
 
 <div class:list={["text-image-block", imagePosition]}>
   <div class="image-container">
-    <img src={imageSrc} alt="A descriptive alt text for the image" loading="lazy" decoding="async" />
+    <img src={imageSrc ? imageSrc : undefined} alt="A descriptive alt text for the image" loading="lazy" decoding="async" data-img-placeholder />
   </div>
   <div class="text-container">
     <slot />
