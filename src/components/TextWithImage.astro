@@ -1,0 +1,64 @@
+---
+interface Props {
+  imageSrc: string;
+  imagePosition?: 'left' | 'right';
+}
+
+const { imageSrc, imagePosition = 'left' } = Astro.props;
+---
+
+<div class:list={["text-image-block", imagePosition]}>
+  <div class="image-container">
+    <img src={imageSrc} alt="A descriptive alt text for the image" loading="lazy" decoding="async" />
+  </div>
+  <div class="text-container">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .text-image-block {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin: 3rem 0;
+  }
+
+  @media (min-width: 768px) {
+    /* Default: image on left (col 1), text on right (col 2) */
+    .text-image-block.left {
+      grid-template-columns: 3fr 2fr; /* 60% image, 40% text */
+    }
+
+    /* Image on right (col 2), text on left (col 1) */
+    .text-image-block.right {
+      grid-template-columns: 2fr 3fr; /* 40% text, 60% image */
+    }
+
+    .text-image-block .image-container {
+      grid-row: 1;
+    }
+
+    .text-image-block.left .image-container {
+      grid-column: 1;
+    }
+    .text-image-block.left .text-container {
+      grid-column: 2;
+    }
+
+    .text-image-block.right .image-container {
+      grid-column: 2;
+    }
+    .text-image-block.right .text-container {
+      grid-column: 1;
+    }
+  }
+
+  .image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+  }
+</style>

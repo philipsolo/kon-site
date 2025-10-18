@@ -1,76 +1,147 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import ImageGallery from '@/components/ImageGallery.astro';
+import TextWithImage from '@/components/TextWithImage.astro';
 ---
 
 <BaseLayout>
   <section class="home">
     <div class="content">
-      <p>
-        <strong>KS:</strong> I met Konstantinos through some prompts, and we agreed — well, I had little choice — to take a moment to reflect on him and what matters to him. Born in Athens in 1999, he has a love–hate relationship with the city — a place that fosters subversion, feels liminal at times, but is undeniably beautiful.
-      </p>
+      <TextWithImage imageSrc="/dji_fly_20240616_191910_0005_1718599063526_photo.jpg" imagePosition="right">
+        <div class="dialogue-entry speaker-ks">
+          <p class="speaker-label">KS</p>
+          <p>I met Konstantinos through some prompts, and we agreed — well, I had little choice — to take a moment to reflect on him and what matters to him. Born in Athens in 1999, he has a love–hate relationship with the city — a place that fosters subversion, feels liminal at times, but is undeniably beautiful.</p>
+        </div>
+      </TextWithImage>
 
-      <p>
-        <strong>KS:</strong> He moves through different circles of friends: people to talk work with, people to talk feelings with, and people to simply go out and dance with. Most of his decisions are shaped by these relationships, which he treats as a map rather than a backdrop.
-      </p>
+      <div class="dialogue-entry speaker-ks">
+        <p class="speaker-label">KS</p>
+        <p>He moves through different circles of friends: people to talk work with, people to talk feelings with, and people to simply go out and dance with. Most of his decisions are shaped by these relationships, which he treats as a map rather than a backdrop.</p>
+      </div>
 
-      <p>
-        <strong>KS:</strong> Weekdays are spent working in cafes or libraries, often followed by trips to the cinema, leading into Sundays spent relaxing at the sea.
-      </p>
+      <div class="dialogue-entry speaker-ks">
+        <p class="speaker-label">KS</p>
+        <p>Weekdays are spent working in cafes or libraries, often followed by trips to the cinema, leading into Sundays spent relaxing at the sea.</p>
+      </div>
 
-      <!-- Randomized image slot 1 -->
       <figure class="figure">
         <img data-random-slot="0" class="rand-img main-img" alt="random image slot 1" loading="lazy" decoding="async" width="650" />
         <figcaption class="sr-only">random image</figcaption>
       </figure>
 
-      <!-- Raw conversational headings/markers preserved -->
-      <p><strong>GPT</strong></p>
-      <p><strong>KS</strong></p>
-
-      <!-- Q/A block -->
-      <div class="qna">
-        <div class="gpt"><p><strong>GPT:</strong> Do you remember a moment when you knew this is what you wanted to do?</p></div>
-        <div class="ks"><p><strong>KS:</strong> It was more like a method of elimination, as I didn’t really think it was possible to do something more creative. In my environment, it was frowned upon not to become an engineer or lawyer. But after doing Mathematics, I realized I could never live a corporate or scientific life. I have a vivid memory of being on Hydra one summer for a party, and it just clicked — fashion had to be more than a hobby.</p></div>
+      <div class="dialogue-entry speaker-gpt">
+        <p class="speaker-label">GPT</p>
+        <p>Do you remember a moment when you knew this is what you wanted to do?</p>
       </div>
 
-      <p><strong>GPT:</strong> That sounds like a turning point — not loud or dramatic, but a kind of quiet click in your head. What was it about that moment in Hydra that made it feel different from everything before?</p>
+      <div class="dialogue-entry speaker-ks">
+        <p class="speaker-label">KS</p>
+        <p>It was more like a method of elimination, as I didn’t really think it was possible to do something more creative. In my environment, it was frowned upon not to become an engineer or lawyer. But after doing Mathematics, I realized I could never live a corporate or scientific life. I have a vivid memory of being on Hydra one summer for a party, and it just clicked — fashion had to be more than a hobby.</p>
+      </div>
 
-      <p><strong>KS:</strong> I think I was just more confident in that setting. It’s a small and beautiful place. Like most Greek islands, it has its own aesthetic and vibe, and while I was interpreting it, I realized this is what I want to do — interpret and reproduce unique aesthetics.</p>
+      <div class="dialogue-entry speaker-gpt">
+        <p class="speaker-label">GPT</p>
+        <p>That sounds like a turning point — not loud or dramatic, but a kind of quiet click in your head. What was it about that moment in Hydra that made it feel different from everything before?</p>
+      </div>
 
-      <p><strong>KS:</strong> “I don’t force direction. I let things unfold.”</p>
+      <div class="dialogue-entry speaker-ks">
+        <p class="speaker-label">KS</p>
+        <p>I think I was just more confident in that setting. It’s a small and beautiful place. Like most Greek islands, it has its own aesthetic and vibe, and while I was interpreting it, I realized this is what I want to do — interpret and reproduce unique aesthetics.</p>
+      </div>
 
-      <p><strong>GPT:</strong> So it wasn’t just about clothes or visuals, but more about translating a feeling — turning a place, a mood, or a moment into something tangible. Do you think that’s still what drives you now?</p>
+      <div class="dialogue-entry speaker-ks">
+        <p class="speaker-label">KS</p>
+        <p>“I don’t force direction. I let things unfold.”</p>
+      </div>
 
-      <p><strong>KS:</strong> Yes, exactly. At the moment, I’m more focused on spaces and how to extract the appropriate emotions from them.</p>
+      <div class="dialogue-entry speaker-gpt">
+        <p class="speaker-label">GPT</p>
+        <p>So it wasn’t just about clothes or visuals, but more about translating a feeling — turning a place, a mood, or a moment into something tangible. Do you think that’s still what drives you now?</p>
+      </div>
 
-      <p><strong>GPT:</strong> When you’re in a space, what’s the first thing you pay attention to?</p>
-      <p><strong>KS:</strong> What doesn’t fit or isn’t needed.</p>
+      <div class="dialogue-entry speaker-ks">
+        <p class="speaker-label">KS</p>
+        <p>Yes, exactly. At the moment, I’m more focused on spaces and how to extract the appropriate emotions from them.</p>
+      </div>
 
-      <p><strong>GPT:</strong> Do you approach people and relationships the same way?</p>
-      <p><strong>KS:</strong> I usually expect the most from people even if they let me down. It often leads to disappointment, but I still prefer this approach to a safer one. Risky relationships usually give you more.</p>
+      <div class="dialogue-entry speaker-gpt">
+        <p class="speaker-label">GPT</p>
+        <p>When you’re in a space, what’s the first thing you pay attention to?</p>
+      </div>
+      <div class="dialogue-entry speaker-ks">
+        <p class="speaker-label">KS</p>
+        <p>What doesn’t fit or isn’t needed.</p>
+      </div>
 
-      <p><strong>GPT:</strong> Do you think your sensitivity and awareness of people helps in reading spaces and projects the same way?</p>
-      <p><strong>KS:</strong> Probably, since most things I do are collaborative, and without trust and freedom, people can’t create.</p>
+      <div class="dialogue-entry speaker-gpt">
+        <p class="speaker-label">GPT</p>
+        <p>Do you approach people and relationships the same way?</p>
+      </div>
+      <div class="dialogue-entry speaker-ks">
+        <p class="speaker-label">KS</p>
+        <p>I usually expect the most from people even if they let me down. It often leads to disappointment, but I still prefer this approach to a safer one. Risky relationships usually give you more.</p>
+      </div>
 
-      <p><strong>GPT:</strong> How do you usually create that environment when you’re leading a project?</p>
-      <p><strong>KS:</strong> I mostly try to work with friends, so the trust is already there. Many times, I have to find “strangers,” in which case I like approaching them as potential new friends.</p>
+      <div class="dialogue-entry speaker-gpt">
+        <p class="speaker-label">GPT</p>
+        <p>Do you think your sensitivity and awareness of people helps in reading spaces and projects the same way?</p>
+      </div>
+      <div class="dialogue-entry speaker-ks">
+        <p class="speaker-label">KS</p>
+        <p>Probably, since most things I do are collaborative, and without trust and freedom, people can’t create.</p>
+      </div>
 
-      <p><strong>GPT:</strong> “I find high-intensity environments to be the only places where I feel fully engaged.”</p>
-      <p><strong>KS:</strong> I’m fascinated by the challenge of remaining calm in chaotic situations and supporting others in doing the same.</p>
+      <div class="dialogue-entry speaker-gpt">
+        <p class="speaker-label">GPT</p>
+        <p>How do you usually create that environment when you’re leading a project?</p>
+      </div>
+      <div class="dialogue-entry speaker-ks">
+        <p class="speaker-label">KS</p>
+        <p>I mostly try to work with friends, so the trust is already there. Many times, I have to find “strangers,” in which case I like approaching them as potential new friends.</p>
+      </div>
 
-      <p><strong>GPT:</strong> Do you ever feel a conflict between the emotional side of how you see things and the more practical side of getting them done?</p>
-      <p><strong>KS:</strong> Emotion is definitely needed to be creative, but it can never interfere with actual work output. These work environments are already stressful enough; being unstable is way too unproductive.</p>
+      <div class="dialogue-entry speaker-gpt">
+        <p class="speaker-label">GPT</p>
+        <p>“I find high-intensity environments to be the only places where I feel fully engaged.”</p>
+      </div>
+      <div class="dialogue-entry speaker-ks">
+        <p class="speaker-label">KS</p>
+        <p>I’m fascinated by the challenge of remaining calm in chaotic situations and supporting others in doing the same.</p>
+      </div>
 
-      <p><strong>KS:</strong> I usually ride that high for the entirety of the project and wind down after it’s all done. I find that high-intensity work environments like these are among the few places where I feel fully engaged and inspired.</p>
+      <div class="dialogue-entry speaker-gpt">
+        <p class="speaker-label">GPT</p>
+        <p>Do you ever feel a conflict between the emotional side of how you see things and the more practical side of getting them done?</p>
+      </div>
+      <div class="dialogue-entry speaker-ks">
+        <p class="speaker-label">KS</p>
+        <p>Emotion is definitely needed to be creative, but it can never interfere with actual work output. These work environments are already stressful enough; being unstable is way too unproductive.</p>
+      </div>
 
-      <p><strong>GPT:</strong> What do you think it gives you that calmer environments don’t?</p>
-      <p><strong>KS:</strong> I’m fascinated by the challenge of remaining calm in chaotic situations and supporting others in doing the same. So it’s almost like you become the grounding force when everything around you is moving fast.</p>
+      <div class="dialogue-entry speaker-ks">
+        <p class="speaker-label">KS</p>
+        <p>I usually ride that high for the entirety of the project and wind down after it’s all done. I find that high-intensity work environments like these are among the few places where I feel fully engaged and inspired.</p>
+      </div>
 
-      <p><strong>KS:</strong> Being the middle child with two brothers, I constantly had to be the middleman and resolve most issues — even with my parents.</p>
+      <div class="dialogue-entry speaker-gpt">
+        <p class="speaker-label">GPT</p>
+        <p>What do you think it gives you that calmer environments don’t?</p>
+      </div>
+      <div class="dialogue-entry speaker-ks">
+        <p class="speaker-label">KS</p>
+        <p>I’m fascinated by the challenge of remaining calm in chaotic situations and supporting others in doing the same. So it’s almost like you become the grounding force when everything around you is moving fast.</p>
+      </div>
 
-      <p><strong>KS:</strong> It seems like all of this — the people, the spaces, the moments — isn’t just what you do, but also how you make sense of the world.</p>
+      <div class="dialogue-entry speaker-ks">
+        <p class="speaker-label">KS</p>
+        <p>Being the middle child with two brothers, I constantly had to be the middleman and resolve most issues — even with my parents.</p>
+      </div>
 
-      <!-- Randomized image slot 2 -->
+      <div class="dialogue-entry speaker-ks">
+        <p class="speaker-label">KS</p>
+        <p>It seems like all of this — the people, the spaces, the moments — isn’t just what you do, but also how you make sense of the world.</p>
+      </div>
+
       <figure class="figure">
         <img data-random-slot="1" class="rand-img main-img" alt="random image slot 2" loading="lazy" decoding="async" width="650" />
         <figcaption class="sr-only">random image</figcaption>
@@ -80,52 +151,39 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
         “Human connections are how I navigate, not what I decorate my life with.”
       </blockquote>
 
-      <!-- Large gallery of all images -->
-      <section class="all-images">
-        <h3><strong>All images</strong></h3>
-        <div class="gallery" id="gallery"></div>
-      </section>
-
+      <ImageGallery />
     </div>
   </section>
 
   <script type="module">
-    // List of public images available in the repo's public/ directory.
-    // Edit this list if you add or remove files.
     const IMAGES = [
-      '/blog-placeholder-1.jpg',
-      '/blog-placeholder-2.jpg',
-      '/blog-placeholder-3.jpg',
-      '/blog-placeholder-4.jpg',
-      '/blog-placeholder-5.jpg',
-      '/blog-placeholder-about.jpg',
       '/dji_fly_20240616_191910_0005_1718599063526_photo.jpg',
       '/DSC09423.JPG',
+      '/IMG_0087.jpg',
+      '/IMG_0187.jpg',
+      '/IMG_0339.jpg',
       '/IMG_0341.JPG',
-      '/IMG_8492.JPG',
+      '/IMG_2392.jpg',
+      '/IMG_2410.jpg',
+      '/IMG_2991.jpg',
+      '/IMG_3140.jpg',
       '/IMG_4405.JPG',
-      '/IMG_0187.HEIC',
-      '/IMG_0087.HEIC',
-      '/IMG_0339.HEIC',
-      '/IMG_2392.HEIC',
-      '/IMG_2410.HEIC',
-      '/IMG_2991.heic',
-      '/IMG_3140.HEIC',
-      '/IMG_4481.HEIC',
-      '/IMG_5413.HEIC',
-      '/IMG_5602.HEIC',
-      '/IMG_6373.HEIC',
-      '/IMG_6746.HEIC',
-      '/IMG_6813.HEIC',
-      '/IMG_6905.HEIC',
-      '/IMG_7149.HEIC',
-      '/IMG_7194.HEIC',
-      '/IMG_8301.HEIC',
-      '/IMG_8388.HEIC',
-      '/IMG_8389.HEIC',
-      '/IMG_8598.HEIC',
-      '/IMG_8881.HEIC',
-      '/IMG_9220.HEIC'
+      '/IMG_4481.jpg',
+      '/IMG_5413.jpg',
+      '/IMG_5602.jpg',
+      '/IMG_6373.jpg',
+      '/IMG_6746.jpg',
+      '/IMG_6813.jpg',
+      '/IMG_6905.jpg',
+      '/IMG_7149.jpg',
+      '/IMG_7194.jpg',
+      '/IMG_8301.jpg',
+      '/IMG_8388.jpg',
+      '/IMG_8389.jpg',
+      '/IMG_8492.JPG',
+      '/IMG_8598.jpg',
+      '/IMG_8881.jpg',
+      '/IMG_9220.jpg',
     ];
 
     function shuffle(array) {
@@ -136,39 +194,15 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
       return array;
     }
 
-    // Pick random images for each placeholder slot and populate attributes for caching/efficiency
     (function populateRandomSlots() {
       const slots = document.querySelectorAll('[data-random-slot]');
       if (!slots.length) return;
       const shuffled = shuffle(IMAGES.slice());
       slots.forEach((el, idx) => {
         const img = shuffled[idx % shuffled.length];
-        // assign src and a basic srcset to allow browsers to pick appropriate size.
         el.src = img;
-        // Use same image for srcset fallback; Cloudflare Pages will serve optimally from CDN.
         el.srcset = `${img} 650w`;
         el.sizes = '(min-width: 720px) 650px, 100vw';
-      });
-    })();
-
-    // Build a simple, cache-efficient gallery
-    (function buildGallery() {
-      const gallery = document.getElementById('gallery');
-      if (!gallery) return;
-      const list = IMAGES.slice();
-      // keep order stable but allow simple shuffle for visual variety
-      const recommended = shuffle(list).slice(0, 100);
-      recommended.forEach((path) => {
-        const img = document.createElement('img');
-        img.src = path;
-        img.loading = 'lazy';
-        img.decoding = 'async';
-        img.width = 300;
-        img.alt = '';
-        img.className = 'gallery-item';
-        // hint to the browser that these are long-lived static assets
-        img.setAttribute('fetchpriority', 'low');
-        gallery.appendChild(img);
       });
     })();
   </script>
@@ -176,53 +210,72 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
-  /* Page-specific layout placed inside the layout's main element */
   .home {
-    max-width: 650px;
+    width: 80%;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 4rem 1.25rem;
   }
 
-  .hero {
-    text-align: center;
-    margin-bottom: 1.5rem;
+  .content p {
+    line-height: 1.7;
+    color: rgba(255,255,255,0.95);
   }
 
-  .promo { text-align: center; margin-bottom: 1rem; color: rgba(255,255,255,0.95); }
-  .promo .cta { margin-left: .5rem; color: rgba(255,255,255,0.95); text-decoration: underline; }
+  .dialogue-entry {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
 
-  .mini-nav { display: flex; justify-content: center; gap: 1.25rem; margin-bottom: 1.5rem; }
-  .mini-nav a { color: rgba(255,255,255,0.95); text-decoration: none; }
+  .dialogue-entry p {
+    margin: 0;
+  }
 
-  h1 { font-size: 2.25rem; margin-bottom: .25rem; }
-  h2 { font-size: 1.125rem; color: rgba(255,255,255,0.9); }
+  .speaker-label {
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 0.75rem;
+    display: block;
+    opacity: 0.6;
+  }
 
-  hr { border: 0; height: 1px; background: rgba(255,255,255,0.08); margin: 2rem 0; }
+  .speaker-gpt {
+    background-color: rgba(255, 255, 255, 0.03);
+  }
 
-  .content p { margin-bottom: 1.5rem; line-height: 1.7; color: rgba(255,255,255,0.95); }
+  .speaker-ks {
+    background-color: transparent;
+  }
 
-  .qna { margin-bottom: 1.25rem; }
-  .gpt, .ks { padding: .85rem; border-radius: 6px; }
-  .gpt { background: rgba(255,255,255,0.04); }
-  .ks { background: rgba(255,255,255,0.02); margin-top: .5rem; }
+  .figure {
+    margin: 3rem auto;
+    max-width: 75%;
+  }
 
-  .split { display: grid; grid-template-columns: 1fr 320px; gap: 1.25rem; align-items: center; margin: 2rem 0; }
-  .split.reverse { grid-template-columns: 320px 1fr; }
+  .main-img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+  }
 
-  .figure { margin: 2rem 0; }
-  .main-img { width: 100%; height: auto; border-radius: 8px; display: block; }
-
-  .all-images { margin-top: 3rem; }
-  .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.75rem; }
-  .gallery-item { width: 100%; height: auto; display: block; border-radius: 6px; object-fit: cover; }
-
-  .closing-quote { margin-top: 3rem; text-align: center; font-size: 1.35rem; font-style: italic; font-weight: 600; color: rgba(255,255,255,0.96); }
-
-  .issue { text-align: center; margin-top: 2rem; }
+  .closing-quote {
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 1.35rem;
+    font-style: italic;
+    font-weight: 600;
+    color: rgba(255,255,255,0.96);
+    padding: 0 1rem;
+  }
 
   @media (max-width: 720px) {
-    .split { grid-template-columns: 1fr; }
-    .split.reverse { grid-template-columns: 1fr; }
-    .home { padding: 2rem 1rem; }
+    .home {
+      padding: 2rem 1rem;
+    }
   }
 </style>

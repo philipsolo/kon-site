@@ -1,0 +1,59 @@
+---
+// This component displays a gallery of all available images.
+const allImages = [
+  '/dji_fly_20240616_191910_0005_1718599063526_photo.jpg',
+  '/DSC09423.JPG',
+  '/IMG_0087.jpg',
+  '/IMG_0187.jpg',
+  '/IMG_0339.jpg',
+  '/IMG_0341.JPG',
+  '/IMG_2392.jpg',
+  '/IMG_2410.jpg',
+  '/IMG_2991.jpg',
+  '/IMG_3140.jpg',
+  '/IMG_4405.JPG',
+  '/IMG_4481.jpg',
+  '/IMG_5413.jpg',
+  '/IMG_5602.jpg',
+  '/IMG_6373.jpg',
+  '/IMG_6746.jpg',
+  '/IMG_6813.jpg',
+  '/IMG_6905.jpg',
+  '/IMG_7149.jpg',
+  '/IMG_7194.jpg',
+  '/IMG_8301.jpg',
+  '/IMG_8388.jpg',
+  '/IMG_8389.jpg',
+  '/IMG_8492.JPG',
+  '/IMG_8598.jpg',
+  '/IMG_8881.jpg',
+  '/IMG_9220.jpg',
+];
+---
+
+<div class="gallery">
+  {allImages.map(image => (
+    <img
+      src={image}
+      alt={`Gallery image ${image}`}
+      loading="lazy"
+      decoding="async"
+    />
+  ))}
+</div>
+
+<style>
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+  .gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+  }
+</style>
