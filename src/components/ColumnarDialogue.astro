@@ -1,0 +1,38 @@
+---
+// Component for a two-column dialogue layout
+---
+<div class="columnar-dialogue">
+  <div class="column-left">
+    <slot name="left" />
+  </div>
+  <div class="column-right">
+    <slot name="right" />
+  </div>
+</div>
+<style>
+  .columnar-dialogue {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem 2.5rem;
+    margin: 3rem 0;
+  }
+
+  @media (min-width: 768px) {
+    .columnar-dialogue {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 0;
+    }
+    .column-left {
+        padding-right: 2.5rem;
+    }
+    .column-right {
+        padding-left: 2.5rem;
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  .column-left :global(.dialogue-entry),
+  .column-right :global(.dialogue-entry) {
+    margin-bottom: 1.5rem;
+  }
+</style>
